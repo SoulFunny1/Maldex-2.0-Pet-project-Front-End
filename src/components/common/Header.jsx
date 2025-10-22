@@ -1,4 +1,8 @@
-export default function Header() {
+import { useState } from "react";
+export default function Header({ openUserMenu }) {
+    
+
+
     return (
         <header className="mx-30">
             <div className="bg-white px-10 pt-10 rounded-b-2xl">
@@ -56,7 +60,7 @@ export default function Header() {
                     </div>
 
                     <div>
-                        <div className="flex items-stretch w-[600px]  my-10 border-2 border-red-600 rounded-l-lg overflow-hidden relative">
+                        <div className="flex items-stretch w-[980px]  my-10 border-2 border-red-600 rounded-l-lg overflow-hidden relative">
                             {/* Левая часть: Фильтр и Поиск */}
                             <div className="flex flex-grow items-stretch relative bg-white">
                                 {/* Фильтр */}
@@ -91,7 +95,7 @@ export default function Header() {
                             <img src="./heart.svg" alt="" />
                             <p className="font-medium ">Избранное</p>
                         </div>
-                        <div className="flex flex-col items-center">
+                        <div onClick={() => openUserMenu(true)} className="flex flex-col items-center">
                             <img src="./union.svg" alt="" />
                             <p className="font-medium ">Кабинет</p>
                         </div>

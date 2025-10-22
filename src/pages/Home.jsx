@@ -18,17 +18,11 @@ const initialCategories = [
 ];
 
 export default function CategoryNav() {
-    // 1. Использование состояния для отслеживания активной категории.
-    // По умолчанию активна первая категория (index 0).
     const [activeIndex, setActiveIndex] = useState(0);
 
-    // 2. Функция-обработчик клика.
     const handleClick = (index) => {
-        // Устанавливаем новый активный индекс
         setActiveIndex(index);
 
-        // Здесь можно добавить дополнительную логику: 
-        // например, вызов функции для загрузки данных для этой категории.
         console.log(`Выбрана категория: ${initialCategories[index].name}`);
     };
 
@@ -41,7 +35,6 @@ export default function CategoryNav() {
 
 
                 <div className="flex justify-between items-center">
-
                     <nav className="flex items-center space-x-6">
                         {initialCategories.map((item, index) => {
                             const isActive = index === activeIndex;
@@ -54,8 +47,8 @@ export default function CategoryNav() {
                                 >
                                     <span
                                         className={`text-sm whitespace-nowrap transition duration-200 ${isActive
-                                            ? 'text-red-500 font-bold' // Активный стиль
-                                            : 'text-gray-600 hover:text-gray-800' // Неактивный стиль
+                                            ? 'text-red-500 font-bold'
+                                            : 'text-gray-600 hover:text-gray-800'
                                             }`}
                                     >
                                         {item.name.toUpperCase()}
@@ -77,10 +70,13 @@ export default function CategoryNav() {
                     </button>
                 </div>
             </div>
-            <Swiper
+            <div className="pt-5 pb-5">
+                <Swiper 
                     pagination={{ clickable: true }}
                     modules={[Pagination]}
                     className={styles["swiper-container"]}
+                    spaceBetween={0}
+                    slidesPerView={1}   
                 >
                     <SwiperSlide className={styles.swiperslide}>
                         <img src={banner} alt="banner" />
@@ -92,6 +88,8 @@ export default function CategoryNav() {
                         <img src={banner} alt="banner" />
                     </SwiperSlide>
                 </Swiper>
+            </div>
+            
         </div>
     );
 }
