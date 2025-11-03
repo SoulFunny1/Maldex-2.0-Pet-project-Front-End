@@ -90,12 +90,12 @@ export default function Header({ openUserMenu }) {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 cursor-pointer">
                         <div className="flex flex-col items-center">
                             <img src="./heart.svg" alt="" />
                             <p className="font-medium ">Избранное</p>
                         </div>
-                        <div onClick={() => openUserMenu(true)} className="flex flex-col items-center">
+                        <div onClick={() => openUserMenu(true)} className="flex flex-col items-center cursor-pointer">
                             <img src="./union.svg" alt="" />
                             <p className="font-medium ">Кабинет</p>
                         </div>

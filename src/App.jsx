@@ -1,21 +1,24 @@
-// App.jsx (Верно!)
 import { Routes, Route } from 'react-router-dom';
-import Layout from './Layout/Layout'; // Если Layout.jsx находится в папке Layout
-
-import Categories from './components/categories'; 
-import Slider from './pages/Slider'; 
+import Layout from './Layout/Layout'; 
+import CategoriesPage from './components/categories'; 
+import SliderPage from './pages/Slider'; 
 import Home from './pages/Home';
+import Profile from './pages/userPage'; 
 
 export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}> 
-        {/* Layout будет родительским компонентом (включает Header) */}
-        
-        <Route index element={<Home />} />           {/* http://вашсайт/ */}
-        <Route index element={<Categories />} /> {/* http://вашсайт/categories */}
-        <Route element={<Slider />} />     {/* http://вашсайт/slider-page */}
-      </Route>
-    </Routes>
-  );
+    return (
+        <Routes>
+            {/* Layout выступает оберткой для всех основных страниц */}
+            <Route path="/" element={<Layout />}> 
+                
+                {/* Основные страницы, рендерятся в <Outlet /> в Layout */}
+                <Route index element={<Home />} />
+                <Route path="categories" element={<CategoriesPage />} />
+                <Route path="slider" element={<SliderPage />} />
+                
+                {/* Личный Кабинет */}
+                <Route path="profile" element={<Profile />} />
+            </Route>
+        </Routes>
+    );
 }
