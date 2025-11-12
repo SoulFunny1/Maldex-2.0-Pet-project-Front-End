@@ -10,6 +10,7 @@ import AdminDashboard from '../components/AdminDashboard';
 import helloUser from '../components/helloUser';
 import axios from 'axios';
 
+
 axios.defaults.withCredentials = true;
 
 export default function Layout() {

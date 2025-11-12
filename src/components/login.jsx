@@ -40,8 +40,8 @@ export default function Login({ open, onClose, onSwitchToLogin }) {
                 password,
             });
 
-            setSuccess('Регистрация прошла успешно! Вы будете автоматически перенаправлены на Вход.');
-            console.log('Регистрация успешна:', response.data);
+            setSuccess('Авторизация прошла успешно! Вы будете автоматически перенаправлены на Главную.');
+            console.log('Авторизация успешна:', response.data);
             localStorage.setItem('email', response.data.email);
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('role', response.data.role);

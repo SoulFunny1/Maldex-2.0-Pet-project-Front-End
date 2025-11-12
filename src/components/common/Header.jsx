@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 
 export default function Header({
   openUserMenu,
@@ -54,7 +54,23 @@ export default function Header({
           </div>
 
           <button className="flex items-center gap-2 bg-[#EC1026] px-6 py-3 rounded-xl justify-center transition hover:bg-red-700">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-white"
+            >
+              <rect x="3" y="3" width="7" height="9" rx="1" />
+              <rect x="14" y="3" width="7" height="5" rx="1" />
+              <rect x="14" y="12" width="7" height="9" rx="1" />
+              <rect x="3" y="16" width="7" height="5" rx="1" />
+            </svg>
             <p className="font-medium text-white">Каталог</p>
           </button>
 
@@ -81,9 +97,9 @@ export default function Header({
             {/* Кабинет */}
             <div
               onClick={() => {
-                if (!isLoggedIn) openUserMenu(); // Не вошёл — открыть логин
-                else if (isAdmin) onAdminClick(); // Админ — перейти в админку
-                else openUserMenu(); // Обычный пользователь — профиль
+                if (!isLoggedIn) openUserMenu();
+                else if (isAdmin) onAdminClick();
+                else openUserMenu();
               }}
               className="flex flex-col items-center hover:text-red-600 transition"
             >
