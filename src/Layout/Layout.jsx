@@ -8,6 +8,9 @@ import AllCategories from '../components/allCategories';
 import { useState, useEffect, useCallback } from 'react';
 import AdminDashboard from '../components/AdminDashboard';
 import helloUser from '../components/helloUser';
+import ProductInHeader from '../components/ProductsInHeader';
+import FAQ from '../components/common/FAQ';
+import Footer from '../components/common/footer';
 import axios from 'axios';
 
 
@@ -203,6 +206,9 @@ export default function Layout() {
           onLogout={handleLogout}
         />
       )}
+      <ProductInHeader />
+      <FAQ />
+      <Footer />
     </div>
   );
 }
